@@ -7,7 +7,7 @@
 <a href="http://lajeunesse.myweb.usf.edu/juicr/juicr_basic_vignette_v0.1.html"><img src="http://lajeunesse.myweb.usf.edu/juicr/main_juicr_window.jpg" height="400"/></a>
 
 ### video tutorial
-A brief use and installation tutorial for **juicr** can be watched on *Youtube* here:
+A brief use and installation tutorial for **juicr** can be watched on *Youtube* here:<br><br>
 <a href="https://youtu.be/tiL-gZgN9Qk"><img src="http://lajeunesse.myweb.usf.edu/juicr/youtube_Marc_Lajeunesse_juicr_R_package.png" alt="Youtube LajeunesseLab"></a>
 
 ### installation instructions and dependencies
