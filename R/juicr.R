@@ -1,0 +1,37 @@
+#' Automated, semi-automated, and manual extraction of numerical data from
+#' scientific images, plot, charts, and figures
+#'
+#' \pkg{juicr} is a GUI interface for automating data extraction from
+#' multiple images containing scatter and bar plots, semi-automated tools to
+#' tinker with extraction attempts, and a fully-loaded point-and-click manual
+#' extractor with image zoom, calibrator, and classifier. Also provides
+#' detailed and R-independent extraction reports as fully-embedded .html
+#' records. More information about \pkg{juicr} can be found
+#' at \url{http://lajeunesse.myweb.usf.edu/}.
+#'
+#' @details \strong{What to cite?}\cr\cr Lajeunesse, M.J. (2021) Automated,
+#' semi-automated, and manual extraction of numerical data from scientific
+#' images, plot, charts, and figures. \emph{R package, v.0.1}
+#' \cr\cr \strong{Installation and Dependencies.}\cr\cr \pkg{juicr} has one
+#' external dependency that need to be installed and loaded prior to use in R.
+#' This is the EBImage R package (Pau et al. 2010) available only from the
+#' Bioconductor repository: \url{https://www.bioconductor.org/}.
+#' \cr\cr To properly install \pkg{juicr}, start with the following
+#' R script that loads the Bioconductor resources needed to install the EBImage
+#' (also accept all of its dependencies): \cr\cr
+#' \code{install.packages("BiocManager");} \cr \code{BiocManager::install("EBImage"))}
+#' \cr \code{library(metagear)} \cr\cr Finally for Mac OS users, installation
+#' is sometimes not straighforward as the GUI_juicr() requires the
+#' Tcl/Tk GUI toolkit to be installed. You can get this toolkit by making sure
+#' the latest X11 application (xQuartz) is installed from here:
+#' \url{https://www.xquartz.org/}.
+#'
+#' @references Pau, G., Fuchs, F., Sklyar, O., Boutros, M. and Huber, W. (2010)
+#' EBImage: an R package for image processing with applications to cellular
+#' phenotypes. Bioinformatics 26: 979-981.
+#'
+#' @name juicr-package
+#' @docType package
+#' @author Marc J. Lajeunesse (University of South Florida, Tampa USA)
+
+NULL

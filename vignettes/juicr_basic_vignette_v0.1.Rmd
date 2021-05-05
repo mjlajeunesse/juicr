@@ -1,0 +1,157 @@
+
+---
+title: |
+  <p><br><img src="http://lajeunesse.myweb.usf.edu/juicr/juicr_R_package.png" alt="" style="width:140px;margin:0px 20px 0px 0px;" align="left"></p>Automated, semi-automated, and manual extraction of numerical data from scientific images with the <space style="color:#00AAA0"> ***juicr*** </space> package for *R* [BETA]<p><br></p>
+author: '[Marc J. Lajeunesse](http://lajeunesse.myweb.usf.edu/)'
+date: University of South Florida, April 28th 2021 (vignette v. 0.1 for juicr v.0.1) <p><br></p>   <p><br></p>
+output:
+  html_document: 
+    smart: no
+    toc: yes
+  word_document:
+    toc: yes
+  pdf_document:
+    keep_tex: yes
+    latex_engine: xelatex
+    toc: yes
+---
+
+
+```{r set-options, echo=FALSE, cache=FALSE}
+options(width = 800)
+```
+
+<p><br></p>
+<center>![Section Break](http://lajeunesse.myweb.usf.edu/metagear/Dots_Divider.png)</center>
+<p><br></p>
+
+
+# Introduction
+
+------
+
+The **juicr** package for [R](http://www.r-project.org/) contains tools for facilitating the extractions of numerical data from scientific images -- like scatter-plots, bar-plots, and other charts/figures found in publications.  Below is a description of functionalities and layout.  
+
+Updates to this vignette will be posted on our [research webpage at USF](http://lajeunesse.myweb.usf.edu/).
+
+For the source code of **juicr** see: <http://cran.r-project.org/web/packages/juicr/index.html>.
+
+<p><br></p>
+
+### Acknowledgements
+
+I thank everyone who watched my *YouTube* course [Hard-boiled Synthesis](https://www.youtube.com/c/LajeunesseLab) and reached out to me about using **juicr** -- you gave me the final push to complete this old project I started way back and abandoned in 2017! 
+
+<p><br></p>
+
+### How to cite? TBA, but for this beta version maybe:
+
+<p style = "text-indent: -30pt; margin-left:60pt; margin-right:60pt;">
+Lajeunesse, M.J. (2021) Squeezing data from scientific images with the **juicr** package for *R*. R package, v. 0.1. [CRAN](http://cran.r-project.org/web/packages/juicr/index.html)
+</p>
+
+<p><br></p>
+
+### Installation and Dependencies
+**juicr** has an external dependency that needs to be installed and loaded prior to use in R.  This is the **EBImage** R package (Pau *et al.* 2010) available only from [Bioconductor](https://www.bioconductor.org) repository.  
+
+To properly install **juicr**, use the following script in R:
+
+```{r eval=FALSE}
+# first load Bioconductor resources needed to install the EBImage package 
+# and accept/download all of its dependencies
+install.packages("BiocManager"); 
+BiocManager::install("EBImage")
+
+# then load juicr
+library(juicr)
+```
+
+Finally for Mac OS users, installation is sometimes not straighforward, as the `GUI_juicr()` requires the Tcl/Tk GUI toolkit to be installed. You can get this toolkit by making sure that the latest X11 application (xQuartz) is installed from here: [xquartz.macosforge.org](http://xquartz.macosforge.org/landing/).
+
+
+<p><br></p>
+
+### Report a bug? Have comments or suggestions?
+
+Please email me any bugs, comments, or suggestions and I'll try to include them in future releases: <lajeunesse@usf.edu>.  Also try to include **juicr** in the subject heading of your email.  Finally, I'm open to almost anything, but expect a lag before I respond and/or new additions are added.
+
+
+<p><br></p>
+
+### Video tutorials on Youtube
+
+[![Image name](http://lajeunesse.myweb.usf.edu/juicr/youtube_Marc_Lajeunesse_juicr_R_package.png)](https://youtu.be/tiL-gZgN9Qk)
+
+<p><br></p>
+<center>![Section Break](http://lajeunesse.myweb.usf.edu/metagear/Dots_Divider.png)</center>
+<p><br></p>
+
+
+# GUI layout and loading images
+
+------
+
+When running **juicr** without a file specified, the layout is simple:
+
+<p><br></p>
+<center>![main juicr input/ouput bar](http://lajeunesse.myweb.usf.edu/juicr/main_juicr_bar.jpg)</center>
+<p><br></p>
+
+Images can be loaded into **juicr** using the *add new image(s)* button. Alternatively one or many images (as a vector of file name strings) can be included via console:
+
+```{r eval=FALSE}
+# then load juicr
+library(juicr)
+GUI_juicr("Kam_et_al_2003_Fig2.jpg")
+# or many files
+GUI_juicr(c("Kam_et_al_2003_Fig2.jpg", "Kortum_and_Acymyan_2013_Fig4.jpg"))
+```
+
+If an image is loaded, the main window will look like this:
+<p><br></p>
+<center>![main juicr window](http://lajeunesse.myweb.usf.edu/juicr/main_juicr_window.jpg)</center>
+
+<p><br></p>
+<center>![Section Break](http://lajeunesse.myweb.usf.edu/metagear/Dots_Divider.png)</center>
+<p><br></p>
+
+# Automated extraction functionality
+
+------
+The center section of **juicr** includes two options: *automated* or *manual* tools for extracting data. The automated tools include:
+
+<p><br></p>
+<center>![main juicr input/ouput bar](http://lajeunesse.myweb.usf.edu/juicr/juicr_automation_window.jpg)</center>
+<p><br></p>
+
+By pressing the large **juicr-hex** button, it will first determine automatically plot type (e.g., scatter or bar for now), and then begin attempts to extract data from the image. Successes of extractions, such as whether the y-axis was detected, will presented as an orange orange (detected), and failures as gray oranges (not-detected). Also included a suite of semi-automated tinkering options to help **juicr** detect the desired image objects.
+
+<p><br></p>
+<center>![Section Break](http://lajeunesse.myweb.usf.edu/metagear/Dots_Divider.png)</center>
+<p><br></p>
+
+
+# Manual extraction functionality
+
+------
+A large diversity of manual extraction tools are available:
+<p><br></p>
+<center>![main juicr manual window](http://lajeunesse.myweb.usf.edu/juicr/juicr_manual_window.jpg)</center>
+<p><br></p>
+<center>![main juicr secondary manual window](http://lajeunesse.myweb.usf.edu/juicr/juicr_manual_second_window.jpg)</center>
+
+
+<p><br></p>
+<center>![Section Break](http://lajeunesse.myweb.usf.edu/metagear/Dots_Divider.png)</center>
+<p><br></p>
+
+# Saving extractions and generating reports
+
+------
+Currently, **juicr** offers extractions to be saved as .csv files, copied into clipboards, saved as postscript .eps files, or as a fully-embedded and standalone .html file that retains all information of extractions, **juicr** setup, and image modifications for permanent and replicable storage of data. 
+
+Here is an example of a report:
+<p><br></p>
+<center><embed type="text/html" src="http://lajeunesse.myweb.usf.edu/juicr/Kam_et_al_2003_Fig2_juicr.html" width = "800" height = "400"></center>
+<p><br></p>

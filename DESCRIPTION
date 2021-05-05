@@ -1,0 +1,27 @@
+Package: juicr
+Version: 0.2
+Date: 2021-03-05
+Title: Automated and Manual Extraction of Numerical Data from Scientific Images
+Authors@R: person(given = "Marc J.", family = "Lajeunesse", role = c("aut", "cre"),
+  email = "lajeunesse@usf.edu", comment = c(ORCID = "0000-0002-9678-2080"))
+Description: Provides a GUI interface for automating data extraction from 
+  multiple images containing scatter and bar plots, semi-automated tools to tinker 
+  with extraction attempts, and a fully-loaded point-and-click manual extractor 
+  with image zoom, calibrator, and classifier. Also provides detailed and 
+  R-independent extraction reports as fully-embedded .html records.
+Type: Package
+Depends:
+    R (>= 3.3.2)
+biocViews: 
+Imports:
+  XML,
+  RCurl
+SystemRequirements: Tcl/Tk toolkit (X11 Quarts for Mac)
+VignetteBuilder: R.rsp
+License: GPL (>= 2)
+URL: http://lajeunesse.myweb.usf.edu/ https://github.com/mjlajeunesse/ https://www.youtube.com/c/LajeunesseLab/
+Encoding: UTF-8
+RoxygenNote: 7.1.1
+Suggests:
+	EBImage,
+	R.rsp
