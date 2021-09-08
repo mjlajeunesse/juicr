@@ -125,7 +125,7 @@ The center section of **juicr** includes two options: *automated* or *manual* to
 <center>![main juicr input/ouput bar](http://lajeunesse.myweb.usf.edu/juicr/juicr_automation_window.jpg)</center>
 <p><br></p>
 
-By pressing the large **juicr-hex** button, it will first determine automatically plot type (e.g., scatter or bar for now), and then begin attempts to extract data from the image. Successes of extractions, such as whether the y-axis was detected, will presented as an orange orange (detected), and failures as gray oranges (not-detected). Also included a suite of semi-automated tinkering options to help **juicr** detect the desired image objects.
+By pressing the large **juicr-hex** button, it will first determine automatically plot type (e.g., scatter or bar for now), and then begin attempts to extract data from the image. Successes of extractions, such as whether the y-axis was detected, will be presented as an orange orange (detected), and failures as gray oranges (not-detected). Also included a suite of semi-automated tinkering options to help **juicr** detect the desired image objects.
 
 <p><br></p>
 <center>![Section Break](http://lajeunesse.myweb.usf.edu/metagear/Dots_Divider.png)</center>
